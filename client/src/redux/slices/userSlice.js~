@@ -1,0 +1,66 @@
+import { createSlice } from "@reduxjs/toolkit"
+import { fetchAuthMe, loginThunk, registerThunk } from "./thunks/userThunks"
+
+const initialState = {
+  data: {},
+  loading: true,
+  err: null,
+}
+
+const userSlice = createSlice({
+  name: "user",
+  initialState,
+  reducers: {
+    logoutUser: (state, action) => {
+      state.loading = true
+      state.data = {}
+    },
+    updateMe: (state, action) => {
+      const { data } = action.payload
+      state.data = data
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchAuthMe.pending, (state, action) => {
+      state.loading = true
+    })
+    builder.addCase(fetchAuthMe.fulfilled, (state, action) => {
+      state.loading = false
+      state.data = action.payload
+      state.err = null
+    })
+    builder.addCase(fetchAuthMe.rejected, (state, action) => {
+      state.loading = false
+      state.data = action.payload || {}
+      console.log(action.error)
+      state.err = null
+    })
+    builder.addCase(loginThunk.pending, (state, action) => {
+      state.loading = true
+    })
+    builder.addCase(loginThunk.fulfilled, (state, action) => {
+      state.loading = false
+      state.data = action.payload
+      state.err = null
+    })
+    builder.addCase(loginThunk.rejected, (state, action) => {
+      state.loading = false
+      state.err = action.payload
+    })
+    builder.addCase(registerThunk.pending, (state, action) => {
+      state.loading = true
+    })
+    builder.addCase(registerThunk.fulfilled, (state, action) => {
+      state.loading = false
+      state.data = action.payload
+      state.err = null
+    })
+    builder.addCase(registerThunk.rejected, (state, action) => {
+      state.loading = false
+      state.err = action.payload
+    })
+  },
+})
+
+export const userReducer = userSlice.reducer
+export const { logoutUser, updateMe } = userSlice.actions

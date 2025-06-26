@@ -1,0 +1,52 @@
+@import "src/Colors";
+
+.messages {
+  width: 100%;
+  max-height: calc(100% - 140px);
+  min-height: 50%;
+  height: 100%;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow-y: auto;
+  position: relative;
+  transition: none;
+
+  & > div:first-child {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+
+    & > .messageContainer:first-child {
+      margin-top: 20px;
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 2px;
+  }
+  &:hover {
+
+    &::-webkit-scrollbar-track {
+      background: var(--scroll);
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $lightGrey;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .messages {
+    max-height: calc(100% - 120px);
+  }
+}

@@ -1,0 +1,10 @@
+.react-colorful {
+  margin-bottom: 3%;
+  width: 80% !important;
+
+  .react-colorful__pointer,
+  .react-colorful__pointer-fill,
+  .react-colorful__saturation {
+    transition: 0.05s;
+  }
+}

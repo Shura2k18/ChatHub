@@ -1,0 +1,18 @@
+.topBlock {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 8%;
+}
+.confirmAction {
+  position: relative;
+
+  img {
+    width: 200px;
+    height: 200px;
+  }
+
+  p {
+    margin-top: 5%;
+  }
+}

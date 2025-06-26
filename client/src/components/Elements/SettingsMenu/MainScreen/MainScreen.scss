@@ -1,0 +1,98 @@
+@import "src/Colors";
+
+.user {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //margin: 5% 0;
+
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 8%;
+    cursor: pointer;
+  }
+  .data {
+    max-width: 40%;
+
+    & > p {
+      font-weight: 200;
+    }
+
+    .name {
+      font-size: calc(var(--initial-font-size) * 2rem);
+      color: var(--text);
+    }
+    .phone {
+      font-size: calc(var(--initial-font-size) * 20px);
+      color: var(--color);
+    }
+    .tag {
+      font-size: calc(var(--initial-font-size) * 15px);
+      color: var(--text);
+      opacity: 0.5;
+    }
+  }
+}
+.screens {
+  width: 100%;
+  & > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--search);
+    }
+
+    div {
+      margin-right: 10px;
+    }
+    p {
+      font-size: calc(var(--initial-font-size) * 20px);
+    }
+  }
+  path {
+    fill: var(--color);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .user {
+    //margin-top: 10%;
+  }
+  .screens {
+    & > div {
+      //margin: 5% 0;
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 250px;
+      height: 250px;
+      margin: 0;
+      //margin: 0 0 3% 0;
+    }
+    .data {
+      margin-top: 20px;
+
+      & > p {
+        //margin: 7% 0;
+      }
+    }
+  }
+  .screens {
+    margin-top: 50px;
+  }
+}

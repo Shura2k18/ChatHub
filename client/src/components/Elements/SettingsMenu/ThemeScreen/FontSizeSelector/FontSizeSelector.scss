@@ -1,0 +1,74 @@
+@import "src/Colors";
+
+.fontSizeSelector {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3 {
+    margin-bottom: 3%;
+  }
+
+  .sliderContainer {
+    position: relative;
+    width: 70%;
+    height: 25px;
+
+    .inputContainer {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    input[type="range"] {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 1px;
+      background: $lightGrey;
+      outline: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        background: var(--color);
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      &::-moz-range-thumb {
+        width: 15px;
+        height: 15px;
+        background: var(--color);
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+
+    .sliderMarks {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      transform: translateY(-35%);
+      z-index: 0;
+
+      span {
+        width: 8px;
+        height: 8px;
+        background: $lightGrey;
+        border-radius: 50%;
+        display: inline-block;
+      }
+    }
+  }
+}

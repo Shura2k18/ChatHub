@@ -1,0 +1,71 @@
+@import "src/Colors";
+
+.err {
+  width: 100vw;
+  height: var(--viewport-height);
+  background: var(--chatsMenu);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  .errText {
+    position: absolute;
+    width: 100vw;
+    height: var(--viewport-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      color: $white;
+      background: $orange;
+      font-size: 15rem;
+      -webkit-text-stroke: 3px $black;
+      padding: 2rem;
+      border-radius: 3rem;
+      cursor: default;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $orange;
+    font-size: 2rem;
+    border: 2px solid $orange;
+    border-radius: 15px;
+    padding: 0.5rem;
+    margin-bottom: 2%;
+    cursor: pointer;
+    z-index: 1;
+
+    &:hover {
+      background: $orange;
+      color: $white;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .err {
+    .errText {
+      h1 {
+        font-size: 10rem;
+      }
+    }
+    a {
+      font-size: 1.5rem;
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .err {
+    .errText {
+      h1 {
+        font-size: 7rem;
+      }
+    }
+    a {
+      font-size: 1.2rem;
+    }
+  }
+}

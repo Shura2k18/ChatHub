@@ -1,0 +1,86 @@
+import classNames from "./Member.module.scss"
+import { useTranslation } from "react-i18next"
+import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
+import { IsOnlineIndicator } from "../../IsOnlineIndicator/IsOnlineIndicator"
+
+export const Member = (props) => {
+  const [t] = useTranslation()
+  const [isActive, setIsActive] = useState(false)
+  const onlineStatus = useSelector((state) => state.onlineStatus.data)
+  const [isOnline, setIsOnline] = useState(false)
+
+  const memberHandler = () => {
+    if (!props.data) return
+    if (!props.data.users.includes(props.member._id)) {
+      props.setData((prev) => ({
+        ...prev,
+        users: [...prev.users, props.member._id],
+      }))
+    } else {
+      props.setData((prev) => ({
+        ...prev,
+        users: prev.users.filter((item) => item !== props.member._id),
+      }))
+    }
+  }
+
+  useEffect(() => {
+    const userStatus = onlineStatus.find(
+      (user) => user.userId === props.member._id,
+    )
+    if (userStatus) {
+      setIsOnline(userStatus.status === "online")
+    } else {
+      setIsOnline(false)
+    }
+  }, [onlineStatus, props.member._id])
+
+  useEffect(() => {
+    if (!props.data) return
+    props.data.users.includes(props.member._id)
+      ? setIsActive(true)
+      : setIsActive(false)
+  }, [props.data])
+
+  return (
+    <div
+      className={
+        isActive
+          ? `${classNames.member} ${classNames.active}`
+          : classNames.member
+      }
+      onClick={() => memberHandler()}
+      style={props.role && { justifyContent: "space-between" }}
+    >
+      <div className={classNames.memberData}>
+        <div className={classNames.img}>
+          <img
+            src={`${process.env.REACT_APP_SERVER_URL}${props.member.imageUrl}`}
+          />
+          {isOnline && <IsOnlineIndicator />}
+        </div>
+        <div
+          className={classNames.message}
+          style={
+            props.type === "group"
+              ? { alignItems: "flex-start" }
+              : { alignItems: "center" }
+          }
+        >
+          <h3>{props.member.name}</h3>
+          <p>
+            {isOnline
+              ? t("messenger.chatArea.online")
+              : t("messenger.chatArea.offline")}
+          </p>
+        </div>
+      </div>
+      {props.role && (
+        <div className={classNames.role}>
+          <p>{props.role}</p>
+        </div>
+      )}
+    </div>
+  )
+}

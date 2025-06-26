@@ -1,0 +1,167 @@
+.topMenu {
+  width: 100%;
+  height: 70px;
+  background: var(--chatsMenu);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  //position: relative;
+  //z-index: 1;
+
+  .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    .svg {
+      margin-right: 18px;
+      margin-left: 5px;
+
+      path {
+        fill: var(--text);
+      }
+    }
+    &:hover {
+      img {
+        border-radius: 25%;
+      }
+    }
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 15px;
+
+      h3 {
+        color: var(--text);
+        opacity: 0.85;
+      }
+      p {
+        color: var(--color);
+        font-size: calc(var(--initial-font-size) * 0.9rem);
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .svg {
+      width: 50px;
+      height: 50px;
+      margin-left: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 15px;
+
+      &:hover {
+        background: var(--color);
+
+        svg {
+          path {
+            fill: var(--chatsMenu);
+          }
+        }
+      }
+
+      &.additionalMenu {
+        svg {
+          transform: scale(0.5);
+        }
+      }
+      svg {
+        transform: scale(0.9);
+
+        path {
+          fill: var(--color);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .topMenu {
+    .right {
+      .svg {
+        margin-left: 5px;
+
+        &:hover {
+          background: transparent;
+
+          svg {
+            path {
+              fill: var(--color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .topMenu {
+    padding: 0 10px;
+    height: 60px;
+
+    .left {
+      img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .svg {
+        margin-left: 5px;
+        margin-right: 10px;
+
+        svg {
+          width: 20px;
+        }
+      }
+
+      div {
+        margin-left: 10px;
+
+        h3 {
+          font-size: calc(var(--initial-font-size) * 1rem);
+        }
+
+        p {
+          font-size: calc(var(--initial-font-size) * 0.8rem);
+        }
+      }
+    }
+
+    .right {
+      .svg {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+
+
+        &.additionalMenu {
+          svg {
+            transform: scale(0.6);
+          }
+        }
+
+        svg {
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 90px);
+}
+
+.remoteVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+}
+
+.localVideo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 120px;
+  height: 90px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  object-fit: cover;
+  background: #222;
+}
+
+.controls {
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.callButton, .acceptButton, .endButton, .rejectButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.callButton, .acceptButton {
+  background: #28a745;
+}
+
+.callButton:hover, .acceptButton:hover {
+  background: #218838;
+}
+
+.endButton, .rejectButton {
+  background: #dc3545;
+}
+
+.endButton:hover, .rejectButton:hover {
+  background: #c82333;
+}
+
+.error {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  background: #dc3545;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  z-index: 100;
+}

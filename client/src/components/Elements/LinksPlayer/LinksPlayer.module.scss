@@ -1,0 +1,35 @@
+@import "src/Colors";
+
+.videoWrapper {
+  position: relative;
+  width: 100%;   /* Ширина контейнера будет зависеть от родителя */
+  padding-bottom: 56.25%; /* Это 16:9 соотношение сторон */
+  height: 0;
+  overflow: hidden;
+
+  .reactPlayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    svg {
+      transform: scale(1.9);
+
+      polygon {
+        color: var(--color);
+      }
+    }
+  }
+  svg {
+    transform: scale(1.8);
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 1));
+
+    polygon {
+      color: $white;
+    }
+  }
+}

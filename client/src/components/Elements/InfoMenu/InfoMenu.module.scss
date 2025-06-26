@@ -1,0 +1,22 @@
+.chatName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid var(--color);
+    //margin-right: 20px;
+    cursor: pointer;
+  }
+  & > div:last-child {
+    margin-top: 10px;
+  }
+  .isOnline {
+    color: var(--color);
+  }
+}

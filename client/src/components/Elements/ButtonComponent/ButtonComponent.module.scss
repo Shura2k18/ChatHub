@@ -1,0 +1,18 @@
+.btn {
+  //width: 100px;
+  height: 30px;
+  padding: 0 15px 0 15px;
+  color: var(--color);
+  background: none;
+  outline: none;
+  border: none;
+  margin: 5% 0 5% 0;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  font-size: calc(var(--initial-font-size) * 15px);
+
+  &:hover {
+    border: 1px solid var(--color);
+  }
+}

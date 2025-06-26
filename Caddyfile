@@ -1,0 +1,39 @@
+:80
+
+# Раздаём статику
+root * /usr/share/caddy/html
+file_server
+
+# API
+@api path /api/*
+reverse_proxy @api server:5000
+
+# WebSocket
+@ws path /socket.io/*
+reverse_proxy @ws server:5000/socket.io {
+    header_up Connection "Upgrade"
+    header_up Upgrade {http_upgrade}
+    header_up Host {host}
+    header_up X-Real-IP {remote_host}
+    header_up X-Forwarded-For {remote_host}
+    header_up X-Forwarded-Proto {scheme}
+    header_up Sec-WebSocket-Key {http.sec_websocket_key}
+    header_up Sec-WebSocket-Accept {http.sec_websocket_accept}
+    header_up Sec-WebSocket-Protocol {http.sec_websocket_protocol}
+    header_up Sec-WebSocket-Version {http.sec_websocket_version}
+}
+
+# Файлы
+@uploads path /uploads/*
+reverse_proxy @uploads server:5000
+
+# SPA (чтобы все запросы шли на index.html)
+handle_path / {
+    try_files {path} /index.html
+}
+
+# Ошибки
+handle_errors {
+    rewrite * /index.html
+    file_server
+}

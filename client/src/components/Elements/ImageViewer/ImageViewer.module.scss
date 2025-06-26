@@ -1,0 +1,38 @@
+@import "src/Colors";
+
+.mediaViewer {
+  width: 100vw;
+  height: var(--viewport-height);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  cursor: default;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    position: relative;
+    z-index: 2;
+
+    & > img,
+    & > video {
+      max-width: 80vw;
+      max-height: calc(var(--viewport-height) * 0.8);
+    }
+  }
+
+  .svg {
+    position: absolute;
+    z-index: 2;
+    top: 50px;
+    right: 50px;
+    cursor: pointer;
+
+    path {
+      fill-opacity: 0.45;
+      fill: $white;
+    }
+  }
+}

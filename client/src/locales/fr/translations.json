@@ -1,0 +1,105 @@
+{
+  "main": {
+    "header": ["Accueil", "A propos du projet", "A propos de moi", "Contacts"],
+    "authForm": {
+      "anotherForm": {
+        "login": "Connectez-vous au compte",
+        "reg": "Aller à l'inscription"
+      }
+    }
+  },
+  "err": {
+    "text": "Sur le principal"
+  },
+  "messenger": {
+    "sideMenu": {
+      "chats": "Vos chats",
+      "newGroup": "Créer un groupe",
+      "contacts": "Vos contacts",
+      "settings": {
+        "title": "Paramètres"
+      },
+      "exit": "Se déconnecter"
+    },
+    "chatsMenu": {
+      "search": "Recherche",
+      "typing": "... est en train de taper"
+    },
+    "chatArea": {
+      "online": "En ligne",
+      "offline": "Hors ligne",
+      "sendMessage": "Envoyer un message..."
+    },
+    "settingsMenu": {
+      "mainScreen": {
+        "title": "Paramètres",
+        "profile": "Mon compte",
+        "theme": "Configuration de l'interface",
+        "language": "Changer la langue"
+      },
+      "profileScreen": {
+        "title": "Modifier le profil",
+        "name": "Nom",
+        "email": "Email",
+        "tag": "Balise utilisateur",
+        "password": "Changer le mot de passe"
+      },
+      "themeScreen": {
+        "title": "Configuration de l'interface"
+      },
+      "languageScreen": {
+        "title": "Sélection de la langue"
+      },
+      "editingScreen": {
+        "name": {
+          "title": "Changer de nom"
+        },
+        "email": {
+          "title": "Changer de email"
+        },
+        "tag": {
+          "title": "Changer de balise"
+        },
+        "password": {
+          "title": "Changer le mot de passe"
+        }
+      }
+    },
+    "newGroupMenu": {
+      "title": "Créer un groupe",
+      "users": {
+        "title": "Ajouter des participants",
+        "err": "Vous n'avez pas encore d'utilisateurs dans vos contacts"
+      }
+    }
+  },
+  "elements": {
+    "fieldComponent": {
+      "email": "Email",
+      "password": "Mot de passe",
+      "confirmPassword": "Veuillez saisir à nouveau votre mot de passe",
+      "name": "Nom",
+      "tag": "Étiquette",
+      "newName": "Nouveau nom",
+      "newEmail": "Nouveau email",
+      "newTag": "Nouvelle balise",
+      "newPassword": "Nouveau mot de passe",
+      "err": {
+        "tooShort": "Le champ est trop court, le nombre de caractères est minimal ",
+        "tooLong": "Le champ est trop long, le nombre de caractères est maximal ",
+        "required": "Le champ est obligatoire",
+        "startsWithSymbol": "Le champ doit commencer par",
+        "confirmPassword": "Les mots de passe doivent correspondre",
+        "invalidEmail": "Adresse électronique incorrecte",
+        "invalidMembers": "Vous n'avez ajouté aucun membre"
+      }
+    },
+    "buttonComponent": {
+      "save": "Sauvegarder",
+      "cansel": "Annuler",
+      "login": "Se connecter",
+      "reg": "Ouvrir un compte",
+      "next": "Suivant"
+    }
+  }
+}

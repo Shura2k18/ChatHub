@@ -1,0 +1,28 @@
+@import "src/Colors";
+
+.container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .block {
+    min-width: 450px;
+    height: auto;
+    padding: 3% 0 3% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--chatsMenu);
+    text-align: center;
+    border-radius: 2vw;
+    position: relative;
+    z-index: 1;
+  }
+}

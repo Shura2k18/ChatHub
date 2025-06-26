@@ -1,0 +1,37 @@
+.preloaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px !important;
+
+  .progress-circle {
+    width: 50px;
+    margin-right: 10px;
+    cursor: pointer;
+
+    .circle-bg {
+      fill: none;
+      stroke: var(--search);
+      stroke-width: 3;
+    }
+    .circle {
+      fill: none;
+      stroke: var(--color);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 0, 100;
+      transition: stroke-dasharray 0.3s ease-in-out;
+    }
+    .cross {
+      stroke: var(--color);
+      stroke-width: 3;
+      stroke-linecap: round;
+      transition: stroke 0.2s ease-in-out;
+    }
+  }
+  .progress-text {
+    word-wrap: break-word
+  }
+}

@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  server:
+    build:
+      context: ./server
+      target: dev # Используем dev-стадию для разработки
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+      - redis
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/ChatDB
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    command: ["npm", "run", "dev"]
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  mongo_data:

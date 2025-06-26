@@ -1,0 +1,19 @@
+@import "src/Colors";
+
+.contacts {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--scroll);
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $lightGrey;
+    border-radius: 2px;
+  }
+}

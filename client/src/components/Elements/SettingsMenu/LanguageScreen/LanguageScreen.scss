@@ -1,0 +1,36 @@
+.languagesContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  p {
+    margin: 20px 50px;
+    cursor: pointer;
+    &:hover {
+      color: var(--color);
+    }
+
+    &.active {
+      color: var(--color);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .languagesContainer {
+    margin-top: 30%;
+
+    p {
+      font-size: 1.3rem;
+      margin: 15% 0;
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .languagesContainer {
+    grid-template-columns: 1fr;
+
+    p {
+      margin: 5% 0;
+    }
+  }
+}

@@ -1,0 +1,168 @@
+.messageContainer {
+  width: 100%;
+  display: flex;
+  align-items: end;
+  padding: 0 20px 20px 20px;
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+
+  &.myMess {
+    justify-content: flex-end;
+
+    .message {
+      background: var(--myMessage);
+      border-radius: 20px 20px 0 20px;
+
+      .status {
+        justify-content: flex-end;
+      }
+    }
+  }
+  &.notMyMess {
+    justify-content: flex-start;
+
+    .message {
+      background: var(--notMyMessage);
+      border-radius: 20px 20px 20px 0;
+
+      .status {
+        justify-content: flex-end;
+      }
+    }
+  }
+  .message {
+    max-width: 80%;
+    padding: 15px 15px 5px 15px;
+
+    .messContainer {
+      & > div {
+        margin: 0 0 15px 0;
+
+        img {
+          border-radius: 10px;
+        }
+      }
+
+      a {
+        color: var(--color);
+        word-wrap: break-word
+      }
+      .mess {
+        color: var(--text);
+        opacity: 0.85;
+        white-space: pre-line;
+        word-wrap: break-word;
+
+        span {
+
+          -webkit-user-select: text !important;
+          -moz-user-select: text !important;
+          -ms-user-select: text !important;
+          user-select: text !important;
+        }
+      }
+    }
+
+    .name {
+      color: var(--color);
+      opacity: 0.7;
+      margin-bottom: 10px;
+    }
+
+    .status {
+      width: 100%;
+      margin-top: 3px;
+      display: flex;
+      align-items: center;
+
+      p {
+        color: var(--text);
+        opacity: 0.45;
+        font-weight: 200;
+      }
+      .changed {
+        font-size: calc(var(--initial-font-size)* 0.8rem);
+        margin-right: 5px;
+      }
+      .svg {
+        margin-left: 10px;
+        path {
+          fill: var(--color);
+        }
+      }
+    }
+  }
+
+  .file-image {
+    max-width: 100%;
+    max-height: calc(var(--viewport-height) * 0.7);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .file-video {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .file-document {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .file-document button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .file-document button:hover {
+    background: #0056b3;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .messageContainer {
+    padding: 0 10px 10px 10px;
+
+    .message {
+      max-width: 90%;
+      padding: 10px 10px 5px 10px;
+    }
+
+    &.myMess {
+      .message {
+        border-radius: 15px 15px 0 15px;
+      }
+    }
+    &.notMyMess {
+      .message {
+        border-radius: 15px 15px 15px 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .messageContainer {
+    .message {
+      .mess {
+        font-size: calc(var(--initial-font-size) * 0.9rem);
+      }
+    }
+  }
+}

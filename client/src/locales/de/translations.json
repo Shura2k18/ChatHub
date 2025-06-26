@@ -1,0 +1,105 @@
+{
+  "main": {
+    "header": ["Startseite", "Über Projekt", "Über mich", "Kontakte"],
+    "authForm": {
+      "anotherForm": {
+        "login": "Melden Sie sich beim Konto an",
+        "reg": "Gehen Sie zur Registrierung"
+      }
+    }
+  },
+  "err": {
+    "text": "Auf der Hauptseite"
+  },
+  "messenger": {
+    "sideMenu": {
+      "chats": "Ihre Chats",
+      "newGroup": "Eine Gruppe erstellen",
+      "contacts": "Ihre Kontakte",
+      "settings": {
+        "title": "Einstellungen"
+      },
+      "exit": "Ausloggen"
+    },
+    "chatsMenu": {
+      "search": "Suche",
+      "typing": "... tippt"
+    },
+    "chatArea": {
+      "online": "Online",
+      "offline": "Offline",
+      "sendMessage": "Eine Nachricht senden..."
+    },
+    "settingsMenu": {
+      "mainScreen": {
+        "title": "Einstellungen",
+        "profile": "Mein Konto",
+        "theme": "Einrichten der Schnittstelle",
+        "language": "Sprache ändern"
+      },
+      "profileScreen": {
+        "title": "Profil bearbeiten",
+        "name": "Name",
+        "email": "Email",
+        "tag": "Benutzertag",
+        "password": "Kennwort ändern"
+      },
+      "themeScreen": {
+        "title": "Einrichten der Schnittstelle"
+      },
+      "languageScreen": {
+        "title": "Sprachauswahl"
+      },
+      "editingScreen": {
+        "name": {
+          "title": "Namen ändern"
+        },
+        "email": {
+          "title": "Email ändern"
+        },
+        "tag": {
+          "title": "Tag ändern"
+        },
+        "password": {
+          "title": "Kennwort ändern"
+        }
+      }
+    },
+    "newGroupMenu": {
+      "title": "Erstellen Sie eine Gruppe",
+      "users": {
+        "title": "Teilnehmer hinzufügen",
+        "err": "Sie haben noch keine Benutzer in Ihren Kontakten"
+      }
+    }
+  },
+  "elements": {
+    "fieldComponent": {
+      "email": "Email",
+      "password": "Kennwort",
+      "confirmPassword": "Bitte geben Sie Ihr Passwort erneut ein",
+      "name": "Name",
+      "tag": "Tag",
+      "newName": "Neuer Name",
+      "newEmail": "Neue email",
+      "newTag": "Neuer Tag",
+      "newPassword": "Neues Passwort",
+      "err": {
+        "tooShort": "Das Feld ist zu kurz, die Anzahl der Zeichen ist minimal ",
+        "tooLong": "Das Feld ist zu lang, die Anzahl der Zeichen ist maximal ",
+        "required": "Das Feld ist erforderlich",
+        "startsWithSymbol": "Das Feld muss beginnen mit",
+        "confirmPassword": "Passwörter müssen übereinstimmen",
+        "invalidEmail": "Falsche E-Mail Adresse",
+        "invalidMembers": "Sie haben keine Mitglieder hinzugefügt"
+      }
+    },
+    "buttonComponent": {
+      "save": "Speichern",
+      "cansel": "Abbrechen",
+      "login": "Anmelden",
+      "reg": "Konto einrichten",
+      "next": "Nächste"
+    }
+  }
+}

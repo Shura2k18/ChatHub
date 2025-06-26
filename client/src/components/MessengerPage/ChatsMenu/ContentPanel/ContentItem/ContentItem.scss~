@@ -1,0 +1,130 @@
+@import "src/Colors";
+
+.contentItem {
+  width: 100%;
+  height: 80px;
+  padding: 0 25px 0 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text);
+  cursor: pointer;
+
+  &.menu-open:hover {
+    background: none;
+  }
+  &.active {
+    background: var(--search) !important;
+  }
+  &:hover {
+    background: var(--search);
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .img {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      position: relative;
+      //vertical-align: middle;
+
+      img {
+        width: 55px;
+        height: 100%;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .circle {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--color);
+        position: relative;
+        transform: translate(-10px, 20px);
+        //top: 16px;
+        //right: 9px;
+        outline: 2px solid $black;
+        flex-shrink: 0;
+      }
+    }
+    .message {
+      h3 {
+        opacity: 0.85;
+      }
+      p {
+        max-width: 250px;
+        min-width: 150px;
+        color: var(--color);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        transition: none;
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 25px;
+
+    p {
+      font-weight: 200;
+      opacity: 0.65;
+    }
+
+    .svg {
+      svg {
+        path {
+          fill: var(--color);
+        }
+      }
+    }
+    .unreadMessages {
+      min-width: 20px;
+      min-height: 20px;
+      border-radius: 50%;
+      padding: 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--color);
+      color: var(--chatsMenu);
+      margin-top: 2px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contentItem {
+    padding: 0 10px;
+
+    .left {
+      .message {
+        p {
+          max-width: 200px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 410px) {
+  .contentItem {
+    .left {
+      .message {
+        p {
+          max-width: 150px;
+        }
+      }
+    }
+  }
+}

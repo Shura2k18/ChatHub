@@ -1,0 +1,14 @@
+.container {
+  width: 100vw;
+  height: var(--viewport-height);
+  display: grid;
+  //grid-template-columns: 80px 3fr 8fr;
+  grid-template-columns: 80px 40% calc(60% - 80px);
+  transition: none;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: block;
+  }
+}

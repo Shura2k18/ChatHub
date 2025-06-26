@@ -1,0 +1,50 @@
+@import "src/Colors";
+
+.first_block {
+  box-shadow: 0 4px 4px 0 rgba(31, 31, 31, 0.5);
+  background: $grey;
+  width: 100vw;
+  height: var(--viewport-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 140px;
+
+  .logo {
+    margin-bottom: 110px;
+    width: 400px;
+  }
+
+  a {
+    img {
+      width: 80px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .first_block {
+    .logo {
+      width: 300px;
+    }
+    a {
+      img {
+        width: 70px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .first_block {
+    .logo {
+      margin-bottom: 80px;
+      width: 240px;
+    }
+    a {
+      img {
+        width: 50px;
+      }
+    }
+  }
+}

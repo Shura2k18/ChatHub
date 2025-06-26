@@ -1,0 +1,41 @@
+@import "src/Colors";
+
+.membersContainer {
+  width: 100%;
+  max-height: calc(var(--viewport-height) * 0.8);
+
+  .members {
+    margin-top: 5%;
+    max-height: calc(var(--viewport-height) * 0.8 * 0.8);
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+      border-radius: 2px;
+    }
+
+    &:hover {
+      &::-webkit-scrollbar-track {
+        background: var(--scroll);
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $lightGrey;
+      }
+    }
+  }
+  button {
+    margin: 0 5%;
+  }
+  p {
+    margin-bottom: 3%;
+    color: var(--text);
+  }
+}

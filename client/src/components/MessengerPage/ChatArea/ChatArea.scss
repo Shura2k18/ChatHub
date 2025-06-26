@@ -1,0 +1,23 @@
+@import "src/Colors";
+
+.unknown {
+  background: var(--chatArea);
+  width: 100%;
+  height: var(--viewport-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+
+  h1 {
+    color: var(--color);
+    font-size: calc(var(--initial-font-size) * 2rem);
+    border: 2px solid var(--color);
+    border-radius: 15px;
+    padding: 0.5rem;
+  }
+}
+.chatArea {
+  background: var(--chatArea);
+  height: var(--viewport-height);
+}

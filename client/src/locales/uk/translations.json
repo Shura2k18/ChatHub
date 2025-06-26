@@ -1,0 +1,105 @@
+{
+  "main": {
+    "header": ["Головна", "Про проект", "Про мене", "Контакти"],
+    "authForm": {
+      "anotherForm": {
+        "login": "Увійти до акаунта",
+        "reg": "Перейти до реєстрації"
+      }
+    }
+  },
+  "err": {
+    "text": "На головну"
+  },
+  "messenger": {
+    "sideMenu": {
+      "chats": "Ваші чати",
+      "newGroup": "Створити групу",
+      "contacts": "Ваші контакти",
+      "settings": {
+        "title": "Налаштування"
+      },
+      "exit": "Вийти з акаунта"
+    },
+    "chatsMenu": {
+      "search": "Пошук",
+      "typing": "... друкує"
+    },
+    "chatArea": {
+      "online": "У мережі",
+      "offline": "Не в мережі",
+      "sendMessage": "Написати повідомлення..."
+    },
+    "settingsMenu": {
+      "mainScreen": {
+        "title": "Налаштування",
+        "profile": "Мій акаунт",
+        "theme": "Налаштування інтерфейсу",
+        "language": "Змінити мову"
+      },
+      "profileScreen": {
+        "title": "Редагувати профіль",
+        "name": "Ім'я",
+        "email": "Email",
+        "tag": "Тег користувача",
+        "password": "Змінити пароль"
+      },
+      "themeScreen": {
+        "title": "Налаштування інтерфейсу"
+      },
+      "languageScreen": {
+        "title": "Вибір мови"
+      },
+      "editingScreen": {
+        "name": {
+          "title": "Змінити ім'я"
+        },
+        "email": {
+          "title": "Змінити email"
+        },
+        "tag": {
+          "title": "Змінити тег"
+        },
+        "password": {
+          "title": "Змінити пароль"
+        }
+      }
+    },
+    "newGroupMenu": {
+      "title": "Створити групу",
+      "users": {
+        "title": "Додайте учасників",
+        "err": "У вас ще немає користувачів в контактах"
+      }
+    }
+  },
+  "elements": {
+    "fieldComponent": {
+      "email": "Email",
+      "password": "Пароль",
+      "confirmPassword": "Повторіть пароль",
+      "name": "Ім'я",
+      "tag": "Тег",
+      "newName": "Нове ім'я",
+      "newEmail": "Новий email",
+      "newTag": "Новий тег",
+      "newPassword": "Новий пароль",
+      "err": {
+        "tooShort": "Поле закоротке, кількість символів мінімум ",
+        "tooLong": "Поле задовге, кількість символів максимум ",
+        "required": "Поле обов'язкове",
+        "startsWithSymbol": "Поле має починатись з",
+        "confirmPassword": "Паролі мають співпадати",
+        "invalidEmail": "Неправильно вказаний email",
+        "invalidMembers": "Ви не додали жодного учасника"
+      }
+    },
+    "buttonComponent": {
+      "save": "Зберегти",
+      "cansel": "Відмінити",
+      "login": "Увійти",
+      "reg": "Зареєструватись",
+      "next": "Далі"
+    }
+  }
+}

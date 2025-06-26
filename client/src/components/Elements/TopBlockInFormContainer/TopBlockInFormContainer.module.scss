@@ -1,0 +1,43 @@
+.topBlock {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+    font-size: calc(var(--initial-font-size) * 22px);
+  }
+  .svg {
+    cursor: pointer;
+    position: relative;
+
+    svg {
+      path {
+        fill: #676767;
+        fill-opacity: 0.45;
+      }
+    }
+
+    &:hover {
+      svg {
+        path {
+          fill-opacity: 1;
+        }
+      }
+    }
+
+    &:first-child {
+      width: 25px;
+      margin-left: 6%;
+
+      & > svg {
+        display: none;
+      }
+      &.active > svg {
+        display: block;
+      }
+    }
+    &:last-child {
+      margin-right: 6%;
+    }
+  }
+}

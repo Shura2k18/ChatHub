@@ -1,0 +1,68 @@
+version: "3.8"
+
+services:
+  server:
+    build:
+      context: ./server
+      target: prod
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+      - mongo
+#      - client
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - MONGO_URL=mongodb://mongo:27017/ChatDB
+    volumes:
+      - ./server:/app
+    command: ["npm", "start"]
+
+  client:
+    build:
+      context: ./client
+      target: prod
+    ports:
+      - "80:80"
+
+#  client:
+#    build:
+#      context: ./client
+#      target: build
+#    volumes:
+#      - ./client/build:/usr/share/caddy/html
+#
+#  caddy:
+#    image: caddy:latest
+#    container_name: caddy_proxy
+#    restart: unless-stopped
+#    ports:
+#      - "80:80"
+#    volumes:
+#       - ./Caddyfile:/etc/caddy/Caddyfile
+#       - caddy_data:/data
+#       - caddy_config:/config
+#       - ./client/build:/usr/share/caddy/html
+#    networks:
+#      - app_network
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+
+#networks:
+#  app_network:
+
+volumes:
+  mongo_data:
+#  caddy_data:
+#  caddy_config:

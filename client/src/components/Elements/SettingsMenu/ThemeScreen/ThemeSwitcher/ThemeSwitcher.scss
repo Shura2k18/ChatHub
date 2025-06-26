@@ -1,0 +1,82 @@
+@import "src/Colors";
+
+.themeContainer {
+  margin: 5% 0;
+
+  .systemTheme {
+    display: flex;
+    justify-content: center;
+
+    div {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      margin: 30px 20px 20px 20px;
+
+      &.active {
+        border: 2px solid var(--color);
+      }
+    }
+    .light {
+      background: $white;
+    }
+    .dark {
+      background: $darkTheme;
+    }
+  }
+  .colorTheme {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    div {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin: 20px 20px 20px 20px;
+
+      & path {
+        fill: var(--chatsMenu);
+      }
+    }
+
+    .customColor {
+      background: conic-gradient(
+        $red,
+        $orange,
+        $yellow,
+        $green,
+        $blue,
+        $purple,
+        $pink,
+        $red
+      );
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .themeContainer {
+    margin-top: 10%;
+
+    .colorTheme {
+      grid-template-columns: repeat(2, 1fr);
+
+      & > div {
+        justify-self: center;
+      }
+    }
+  }
+  .buttons {
+    button {
+      margin: 5% 10% 0 10%;
+      transform: scale(1.2);
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+}

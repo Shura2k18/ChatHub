@@ -1,0 +1,157 @@
+@import "src/Colors";
+
+//Базові стилі
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rounded Mplus 1c Bold", sans-serif;
+  font-weight: 700;
+  color: var(--text);
+  transition: opacity 0.3s, background-color 0.3s, fill 0.3s, fill-opacity 0.3s, color 0.3s, border-radius 0.3s, transform 0.3s;
+  //transition: 0.3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+body {
+  overflow-x: hidden;
+  &.active {
+    overflow-y: hidden;
+  }
+  h1 {
+    font-size: calc(var(--initial-font-size) * 2rem);
+  }
+  h2 {
+    font-size: calc(var(--initial-font-size) * 1.5rem);
+  }
+  h3 {
+    font-size: calc(var(--initial-font-size) * 1.17rem);
+  }
+  h4 {
+    font-size: calc(var(--initial-font-size) * 1rem);
+  }
+  h5 {
+    font-size: calc(var(--initial-font-size) * 0.83rem);
+  }
+  p {
+    font-size: calc(var(--initial-font-size) * 1rem);
+  }
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+  //p, h1,h2,h3,h4,h5 {
+  //  z-index: 0;
+  //}
+}
+
+//Теми оформлення
+:root[data-theme="dark"] {
+  --sideMenu: #{map-get($dark, sideMenu)};
+  --chatsMenu: #{map-get($dark, chatsMenu)};
+  --chatArea: #{map-get($dark, chatArea)};
+  --search: #{map-get($dark, search)};
+  --notMyMessage: #{map-get($dark, notMyMessage)};
+  --myMessage: #{map-get($dark, myMessage)};
+  --text: #{map-get($dark, text)};
+  --scroll: #{map-get($dark, scroll)};
+}
+:root[data-theme="light"] {
+  --sideMenu: #{map-get($light, sideMenu)};
+  --chatsMenu: #{map-get($light, chatsMenu)};
+  --chatArea: #{map-get($light, chatArea)};
+  --search: #{map-get($light, search)};
+  --notMyMessage: #{map-get($light, notMyMessage)};
+  --myMessage: #{map-get($light, myMessage)};
+  --text: #{map-get($light, text)};
+  --scroll: #{map-get($light, scroll)};
+}
+//:root[data-color="orange"] {
+//  --color: #{$orange};
+//}
+:root[data-color="red"] {
+  --color: #{$red};
+}
+:root[data-color="yellow"] {
+  --color: #{$yellow};
+}
+:root[data-color="green"] {
+  --color: #{$green};
+}
+:root[data-color="turquoise"] {
+  --color: #{$turquoise};
+}
+:root[data-color="blue"] {
+  --color: #{$blue};
+}
+:root[data-color="purple"] {
+  --color: #{$purple};
+}
+:root[data-color="pink"] {
+  --color: #{$pink};
+}
+
+//Стилі появи компонентів
+.fade-enter {
+  transition: none;
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 150ms;
+}
+.fade-enter-done {
+  transition: opacity 0s;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 150ms;
+}
+@media screen and (max-width: 768px) {
+  .slide-right-enter {
+    transition: none;
+    transform: translateX(-100vw);
+  }
+  .slide-right-enter-active {
+    transform: translateX(0);
+    transition: transform 300ms;
+  }
+  .slide-right-enter-done {
+    transition: transform 0s;
+  }
+  .slide-right-exit {
+    transform: translateX(0);
+  }
+  .slide-right-exit-active {
+    transform: translateX(-100vw);
+    transition: transform 300ms;
+  }
+
+  .slide-left-enter {
+    transition: none;
+    position: fixed;
+    top: 0;
+    transform: translateX(100vw);
+  }
+  .slide-left-enter-active {
+    transform: translateX(0);
+    transition: transform 300ms;
+  }
+  .slide-left-enter-done {
+    transition: transform 0s;
+  }
+  .slide-left-exit {
+    transform: translateX(0);
+    position: fixed;
+    top: 0;
+  }
+  .slide-left-exit-active {
+    transform: translateX(100vw);
+    transition: transform 300ms;
+  }
+}

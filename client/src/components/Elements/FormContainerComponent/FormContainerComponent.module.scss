@@ -1,0 +1,63 @@
+@import "src/Colors";
+
+.container {
+  position: fixed;
+  width: 100vw;
+  height: var(--viewport-height);
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+
+  .formContainer {
+    min-width: 520px;
+    max-height: calc(var(--viewport-height) * 0.9);
+    padding: 30px 0;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+    //flex-direction: column;
+    //text-align: center;
+    background: var(--chatsMenu);
+    border-radius: 2vw;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+  //.blackout {
+  //  display: block;
+  //  width: 100vw;
+  //  height: 100vh;
+  //  background: $black;
+  //  opacity: 0.5;
+  //  position: absolute;
+  //  z-index: -1;
+  //}
+}
+@media screen and (max-width: 768px) {
+  .container {
+    .formContainer {
+      min-width: 100vw;
+      height: var(--viewport-height);
+      max-height: var(--viewport-height);
+      //display: grid;
+      //grid-template-rows: auto auto 1fr auto;
+      //grid-template-columns: 1fr;
+      //padding: 7% 0;
+
+      & > div {
+        &:nth-child(1) {
+          grid-row: 1;
+        }
+        &:nth-child(2) {
+          grid-row: 2;
+        }
+        &:nth-child(3) {
+          grid-row: 4;
+        }
+      }
+    }
+  }
+}

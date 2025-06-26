@@ -1,0 +1,37 @@
+$orange: #f48225;
+$red: #ff2929;
+$yellow: #fad02e;
+$green: #91fa49;
+$turquoise: #36d8b7;
+$blue: #3b8aff;
+$purple: #991ef9;
+$pink: #ff5dcd;
+
+$white: #ffffff;
+$black: #000000;
+$darkTheme: #222222;
+$darkGrey: #141414;
+$grey: #1f1f1f;
+$lightGrey: #a0a0a0;
+
+$light: (
+  sideMenu: #fafafa,
+  chatsMenu: #ffffff,
+  chatArea: #c0c0c0,
+  search: #eeeeee,
+  notMyMessage: #eeeeee,
+  myMessage: #f4f4f4,
+  text: #000000,
+  scroll: #eeeeee,
+);
+
+$dark: (
+  sideMenu: #141414,
+  chatsMenu: #222222,
+  chatArea: #292929,
+  search: #474747,
+  notMyMessage: #616161,
+  myMessage: #a0a0a0,
+  text: #ffffff,
+  scroll: #616161,
+);

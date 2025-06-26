@@ -1,0 +1,105 @@
+{
+  "main": {
+    "header": ["Inicio", "Sobre el proyecto", "Sobre mí", "Contactos"],
+    "authForm": {
+      "anotherForm": {
+        "login": "Iniciar sesión en la cuenta",
+        "reg": "Ir al registro"
+      }
+    }
+  },
+  "err": {
+    "text": "En el principal"
+  },
+  "messenger": {
+    "sideMenu": {
+      "chats": "Tus chats",
+      "newGroup": "Crear un grupo",
+      "contacts": "Tus contactos",
+      "settings": {
+        "title": "Configuración"
+      },
+      "exit": "Salir de tu cuenta"
+    },
+    "chatsMenu": {
+      "search": "Busca",
+      "typing": "... está tecleando"
+    },
+    "chatArea": {
+      "online": "En línea",
+      "offline": "Fuera de línea",
+      "sendMessage": "Enviar un mensaje..."
+    },
+    "settingsMenu": {
+      "mainScreen": {
+        "title": "Configuración",
+        "profile": "Mi cuenta",
+        "theme": "Configuración de la interfaz",
+        "language": "Cambiar el idioma"
+      },
+      "profileScreen": {
+        "title": "Editar perfil",
+        "email": "Email",
+        "phone": "Número de teléfono",
+        "tag": "Etiqueta de usuario",
+        "password": "Cambiar la contraseña"
+      },
+      "themeScreen": {
+        "title": "Configuración de la interfaz"
+      },
+      "languageScreen": {
+        "title": "Selección de idioma"
+      },
+      "editingScreen": {
+        "name": {
+          "title": "Cambiar nombre"
+        },
+        "email": {
+          "title": "Cambiar email"
+        },
+        "tag": {
+          "title": "Cambiar etiqueta"
+        },
+        "password": {
+          "title": "Cambiar la contraseña"
+        }
+      }
+    },
+    "newGroupMenu": {
+      "title": "Crear un grupo",
+      "users": {
+        "title": "Agregar participantes",
+        "err": "Aún no tienes usuarios en tus contactos"
+      }
+    }
+  },
+  "elements": {
+    "fieldComponent": {
+      "email": "Email",
+      "password": "Contraseña",
+      "confirmPassword": "Vuelva a introducir su contraseña",
+      "name": "Nombre",
+      "tag": "Etiqueta",
+      "newName": "Nuevo nombre",
+      "newEmail": "Nuevo email",
+      "newTag": "Nueva etiqueta",
+      "newPassword": "Nueva contraseña",
+      "err": {
+        "tooShort": "El campo es demasiado corto, el número de caracteres es mínimo ",
+        "tooLong": "El campo es demasiado largo, el número de caracteres es máximo ",
+        "required": "El campo es obligatorio",
+        "startsWithSymbol": "El campo debe empezar por",
+        "confirmPassword": "Las contraseñas deben coincidir",
+        "invalidEmail": "El correo electrónico no es válido",
+        "invalidMembers": "No has añadido ningún miembro"
+      }
+    },
+    "buttonComponent": {
+      "save": "Guardar",
+      "cansel": "Cancelar",
+      "login": "Iniciar sesión",
+      "reg": "Registrarse",
+      "next": "Próximo"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import "src/Colors";
+
+.contentPanel {
+  width: 100%;
+  //height: calc(100vh - 75px);
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  & > h3 {
+    text-align: center;
+    margin: 10px 0;
+  }
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 2px;
+  }
+  &:hover {
+    &::-webkit-scrollbar-track {
+      background: var(--scroll);
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $lightGrey;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@import "src/Colors";
+
+.dataContainer {
+  width: 100%;
+
+  .membersContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    &:hover {
+      background: transparent;
+    }
+
+    & > h3 {
+      padding: 10px 0;
+    }
+  }
+
+  & > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    padding: 10px 50px 10px 50px;
+
+    & > p {
+      color: var(--color);
+    }
+
+    &:hover {
+      background: var(--search);
+    }
+    //&:nth-child(-n + 3) {
+    //  justify-content: space-between;
+    //  padding: 10px 50px 10px 50px;
+    //}
+    //&:last-child {
+    //  padding-bottom: 0;
+    //}
+    path {
+      fill: var(--color);
+    }
+  }
+  .left {
+    display: flex;
+    align-items: center;
+
+    div {
+      margin-right: 15px;
+    }
+  }
+  .phone,
+  .tag {
+    justify-content: space-between;
+  }
+  & {
+    overflow-y: auto; /* Показываем скроллбар при наведении */
+  }
+  &::-webkit-scrollbar {
+    width: 5px;
+    transition: all 0.3s ease; /* Плавное изменение скроллбара */
+  }
+
+  /* Настройки для скроллбаров */
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 2px;
+  }
+
+  /* Настройки для трека скроллбара */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &:hover {
+    transition: all 0.3s ease;
+
+    /* Настройки для скроллбаров */
+    &::-webkit-scrollbar-thumb {
+      background: $lightGrey;
+    }
+
+    /* Настройки для трека скроллбара */
+    &::-webkit-scrollbar-track {
+      background: var(--scroll);
+    }
+  }
+}

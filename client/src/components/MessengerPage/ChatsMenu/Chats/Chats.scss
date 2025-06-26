@@ -1,0 +1,20 @@
+@import "src/Colors";
+
+.chats {
+  width: 100%;
+  //height: calc(100vh - 75px);
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--scroll);
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $lightGrey;
+    border-radius: 2px;
+  }
+}

@@ -1,0 +1,40 @@
+.galleryContainer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+// Стандартные элементы (2 в ряду)
+.galleryItem {
+  flex: 1 0 calc(50% - 10px);
+  display: flex;
+  justify-content: center;
+}
+
+// Полноширинное изображение (1 в ряду)
+.galleryItemSingle {
+  flex: 1 0 100%;
+}
+
+// Вертикальное изображение на 2 ряда
+.galleryItemTall {
+  flex: 1 0 calc(50% - 10px);
+  height: calc(100% + 10px); // Занимает высоту двух рядов
+}
+
+// Фото внутри
+.galleryItem img,
+.galleryItemSingle img,
+.galleryItemTall img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}

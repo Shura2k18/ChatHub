@@ -1,0 +1,25 @@
+.preloader {
+  width: 100vw;
+  height: var(--viewport-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--chatsMenu);
+
+  svg {
+    width: 15%;
+    transition: 0.3s;
+    animation: pulse 2s infinite;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

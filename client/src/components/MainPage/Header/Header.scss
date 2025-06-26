@@ -1,0 +1,174 @@
+@import "src/Colors";
+
+header {
+  width: 100vw;
+  height: 110px;
+  background: transparent;
+  position: fixed;
+  padding: 0 70px 0 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $white;
+
+  &.active {
+    background: $darkGrey;
+  }
+
+  img {
+    width: 70px;
+  }
+
+  .hamburger {
+    cursor: pointer;
+    transform: scale(1.5);
+    display: none;
+    svg {
+      path {
+        fill: $white;
+        fill-opacity: 0.5;
+      }
+    }
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .active {
+      color: var(--color);
+    }
+
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .close {
+      display: none;
+    }
+  }
+
+  .left_block {
+    p {
+      margin-left: 35px;
+      cursor: pointer;
+
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+
+  .right_block {
+    p {
+      margin-left: 10px;
+      cursor: pointer;
+
+      &:first-child:hover,
+      &:last-child:hover {
+        color: $orange;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    img {
+      width: 50px;
+    }
+
+    .container {
+      p {
+        font-size: 1.076rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 840px) {
+  header {
+    .left_block {
+      p {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  header {
+    .container {
+      width: 100vw;
+      height: 100vh;
+      background: $darkGrey;
+      position: absolute;
+      left: 0;
+      top: -100vh;
+      justify-content: center;
+      flex-direction: column;
+      //display: none;
+
+      .close {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 40px;
+
+        svg {
+          path {
+            fill: $white;
+          }
+        }
+      }
+
+      .left_block {
+        flex-direction: column;
+        text-align: center;
+
+        p {
+          margin: 10px;
+          font-size: 1.9rem;
+          background: $orange;
+          border-radius: 20px;
+          padding: 1.3rem;
+          width: 100%;
+        }
+      }
+      .right_block {
+        margin-top: 50px;
+
+        p {
+          font-size: 1.9rem;
+
+          &:first-child {
+            margin: 0;
+          }
+        }
+      }
+    }
+    .container.active {
+      top: 0;
+    }
+    .hamburger {
+      display: block;
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  header {
+    padding: 0 40px 0 40px;
+
+    img {
+      width: 40px;
+    }
+  }
+}

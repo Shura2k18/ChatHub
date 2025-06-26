@@ -1,0 +1,43 @@
+@import "src/Colors";
+
+.container {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+  }
+  div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      transform: scale(2);
+      filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 1));
+
+      polygon {
+        color: $white;
+      }
+    }
+
+    &:hover {
+      svg {
+        transform: scale(2.3);
+        polygon {
+          color: var(--color);
+        }
+      }
+    }
+  }
+}

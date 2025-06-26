@@ -1,0 +1,105 @@
+{
+  "main": {
+    "header": ["Главная", "О проекте", "Обо мне", "Контакты"],
+    "authForm": {
+      "anotherForm": {
+        "login": "Войти в аккаунт",
+        "reg": "Перейти к регистрации"
+      }
+    }
+  },
+  "err": {
+    "text": "На главную"
+  },
+  "messenger": {
+    "sideMenu": {
+      "chats": "Ваши чаты",
+      "newGroup": "Создать группу",
+      "contacts": "Ваши контакты",
+      "settings": {
+        "title": "Настройки"
+      },
+      "exit": "Выйти из аккаунта"
+    },
+    "chatsMenu": {
+      "search": "Поиск",
+      "typing": "... печатает"
+    },
+    "chatArea": {
+      "online": "В сети",
+      "offline": "Не в сети",
+      "sendMessage": "Написать сообщение..."
+    },
+    "settingsMenu": {
+      "mainScreen": {
+        "title": "Настройки",
+        "profile": "Мой аккаунт",
+        "theme": "Настройка интерфейса",
+        "language": "Изменить язык"
+      },
+      "profileScreen": {
+        "title": "Редактировать профиль",
+        "name": "Имя",
+        "email": "Email",
+        "tag": "Тег пользователя",
+        "password": "Изменить пароль"
+      },
+      "themeScreen": {
+        "title": "Настройка интерфейса"
+      },
+      "languageScreen": {
+        "title": "Выбор языка"
+      },
+      "editingScreen": {
+        "name": {
+          "title": "Сменить имя"
+        },
+        "email": {
+          "title": "Изменить email"
+        },
+        "tag": {
+          "title": "Изменить тег"
+        },
+        "password": {
+          "title": "Изменить пароль"
+        }
+      }
+    },
+    "newGroupMenu": {
+      "title": "Создать группу",
+      "users": {
+        "title": "Добавьте участников",
+        "err": "У вас пока нет пользователей в контактах"
+      }
+    }
+  },
+  "elements": {
+    "fieldComponent": {
+      "email": "Email",
+      "password": "Пароль",
+      "confirmPassword": "Повторите пароль",
+      "name": "Имя",
+      "tag": "Тег",
+      "newName": "Новое имя",
+      "newEmail": "Новый email",
+      "newTag": "Новый тег",
+      "newPassword": "Новый пароль",
+      "err": {
+        "tooShort": "Поле слишком короткое, количество символов минимум ",
+        "tooLong": "Поле слишком длинное, количество символов максимум ",
+        "required": "Поле обязательное",
+        "startsWithSymbol": "Поле должно начинаться с",
+        "confirmPassword": "Пароли должны совпадать",
+        "invalidEmail": "Неправильно вказаний email",
+        "invalidMembers": "Вы не добавили ни одного участника"
+      }
+    },
+    "buttonComponent": {
+      "save": "Сохранить",
+      "cansel": "Отменить",
+      "login": "Войти",
+      "reg": "Зарегистрироваться",
+      "next": "Далее"
+    }
+  }
+}

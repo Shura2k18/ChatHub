@@ -1,0 +1,105 @@
+{
+  "main": {
+    "header": ["Home", "About project", "About me", "Contacts"],
+    "authForm": {
+      "anotherForm": {
+        "login": "Sign in to the account",
+        "reg": "Go to registration"
+      }
+    }
+  },
+  "err": {
+    "text": "On the main"
+  },
+  "messenger": {
+    "sideMenu": {
+      "chats": "Your chats",
+      "newGroup": "Create a group",
+      "contacts": "Your contacts",
+      "settings": {
+        "title": "Settings"
+      },
+      "exit": "Log out"
+    },
+    "chatsMenu": {
+      "search": "Search",
+      "typing": "... is typing"
+    },
+    "chatArea": {
+      "online": "Online",
+      "offline": "Offline",
+      "sendMessage": "Send a message..."
+    },
+    "settingsMenu": {
+      "mainScreen": {
+        "title": "Settings",
+        "profile": "My account",
+        "theme": "Customize the interface",
+        "language": "Change the language"
+      },
+      "profileScreen": {
+        "title": "Edit profile",
+        "name": "Name",
+        "email": "Email",
+        "tag": "User tag",
+        "password": "Change password"
+      },
+      "themeScreen": {
+        "title": "Customize the interface"
+      },
+      "languageScreen": {
+        "title": "Language selection"
+      },
+      "editingScreen": {
+        "name": {
+          "title": "Change name"
+        },
+        "email": {
+          "title": "Change email"
+        },
+        "tag": {
+          "title": "Change tag"
+        },
+        "password": {
+          "title": "Change password"
+        }
+      }
+    },
+    "newGroupMenu": {
+      "title": "Create a group",
+      "users": {
+        "title": "Add participants",
+        "err": "You do not have users in your contacts yet"
+      }
+    }
+  },
+  "elements": {
+    "fieldComponent": {
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Repeat the password",
+      "name": "Name",
+      "tag": "Tag",
+      "newName": "New name",
+      "newEmail": "New email",
+      "newTag": "New tag",
+      "newPassword": "New password",
+      "err": {
+        "tooShort": "The field is too short, the number of characters is minimal ",
+        "tooLong": "The field is too long, the number of characters is maximum ",
+        "required": "The field is required",
+        "startsWithSymbol": "The field must start with",
+        "confirmPassword": "Passwords must match",
+        "invalidEmail": "Incorrect email",
+        "invalidMembers": "You have not added any members"
+      }
+    },
+    "buttonComponent": {
+      "save": "Save",
+      "cansel": "Cancel",
+      "login": "Sign in",
+      "reg": "Sign up",
+      "next": "Next"
+    }
+  }
+}

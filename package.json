@@ -1,0 +1,19 @@
+{
+  "name": "ChatHub",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "concurrently \"docker compose -f docker-compose.dev.yml up\" \"npm run client:dev\"",
+    "server:net": "cloudflared tunnel --url http://localhost:5000",
+    "client:net": "cloudflared tunnel --url http://localhost:3000 --name chathub-tunnel",
+    "server:dev": "docker compose -f docker-compose.dev.yml up",
+    "client:dev": "cd client && npm start",
+    "mongo": "mongo",
+    "server:start": "cd server && node index.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.9",
+    "prettier": "3.5.1"
+  }
+}

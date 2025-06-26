@@ -1,0 +1,249 @@
+@import "src/Colors";
+
+.videoContainer {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: $darkGrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //flex-grow: 1;
+  transition: none;
+
+  .play {
+    width: 7%;
+    position: absolute;
+    cursor: pointer;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      polygon {
+        color: $white;
+      }
+    }
+
+    &:hover {
+      polygon {
+        color: var(--color);
+      }
+    }
+  }
+  .videoPlayer {
+    width: 100%;
+    object-fit: contain;
+    transition: none;
+  }
+
+  .controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+
+    span {
+      color: $white;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: $white;
+      cursor: pointer;
+      font-size: 20px;
+      outline: none;
+
+      circle, path, polygon, line, rect {
+        color: $white;
+      }
+
+      &:hover {
+        circle, path, polygon, line, rect {
+          color: var(--color);
+        }
+      }
+      &.settings {
+        position: relative;
+      }
+    }
+    .volumeControl {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: -10px;
+    }
+
+    .volumeSlider {
+      width: 0;
+      min-width: 0;
+      opacity: 0;
+      transform: translateY(-50%); // Коррекция выравнивания
+      transition: width 0.3s ease, opacity 0.2s ease;
+    }
+
+    .volumeControl:hover .volumeSlider {
+      width: 80px;
+      opacity: 1;
+      margin-right: 10px;
+    }
+  }
+
+
+
+  .progressBar {
+    width: 95%;
+    margin-bottom: 2%;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+
+    &::-webkit-slider-runnable-track {
+      height: 4px;
+      border-radius: 3px;
+      background: linear-gradient(to right, var(--color) var(--progress), $lightGrey var(--progress));
+    }
+  }
+
+  .volumeSlider {
+    width: 100%;
+
+    &::-webkit-slider-runnable-track {
+      height: 4px;
+      border-radius: 3px;
+      background: linear-gradient(to right, var(--color) calc(var(--progress) * 100%), $white calc(var(--progress) * 100%));
+    }
+  }
+  .volumeSlider, .progressBar {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    background: $lightGrey; /* Цвет дорожки */
+    border-radius: 3px;
+    outline: none;
+    transition: background 0.3s;
+    cursor: pointer;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      background: $white;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-top: -4px;
+    }
+
+    /* Firefox */
+    &::-moz-range-track {
+      height: 4px;
+      border-radius: 3px;
+      background: $lightGrey;
+    }
+
+    &::-moz-range-progress {
+      background: var(--color); /* Закрашенная часть */
+      height: 4px;
+      border-radius: 3px;
+    }
+
+    &::-moz-range-thumb {
+      width: 12px;
+      height: 12px;
+      background: $white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  //.selectBox {
+  //  background: $black;
+  //  color: $white;
+  //  border: 1px solid white;
+  //  padding: 4px;
+  //  border-radius: 4px;
+  //  cursor: pointer;
+  //}
+
+  .volumeControl {
+    display: flex;
+    align-items: center;
+  }
+
+  .settingsMenu {
+    position: absolute;
+    top: 50px;
+    background: $black;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .controlsContainer {
+    background: $darkGrey;
+    opacity: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px 0;
+    transition: none;
+
+    &.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    &.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+  }
+  &.fullscreen {
+    .videoPlayer {
+      height: 100% !important;
+    }
+    .controlsContainer {
+      width: 80%;
+      position: absolute;
+      bottom: 0; /* Размещаем у нижнего края */
+      left: 50%; /* Выравниваем по центру */
+      transform: translateX(-50%);
+    }
+    &:hover .controlsContainer {
+      transition: opacity 0.3s ease;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .videoContainer {
+    &.fullscreen {
+      .left, .right {
+        width: 30%;
+        height: 100%;
+        position: fixed;
+      }
+
+      .left {
+        left: 0;
+      }
+
+      .right {
+        right: 0;
+      }
+
+      .center {
+        width: 40%;
+        height: 100%;
+        position: fixed;
+      }
+    }
+  }
+}

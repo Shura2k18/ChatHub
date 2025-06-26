@@ -1,0 +1,68 @@
+import classNames from "./RightClickMenu.module.scss"
+import { useEffect, useRef, useState } from "react"
+
+export const RightClickMenu = (props) => {
+  const menuRef = useRef(null)
+  const [adjustedPosition, setAdjustedPosition] = useState({
+    x: props.left,
+    y: props.top,
+  })
+
+  useEffect(() => {
+    if (props.menuVisible && menuRef.current) {
+      const menuRect = menuRef.current.getBoundingClientRect()
+      let newX = props.left
+      let newY = props.top
+
+      // Проверяем, выходит ли меню за правый край
+      if (newX + menuRect.width > window.innerWidth) {
+        newX = window.innerWidth - menuRect.width
+      }
+      // Проверяем, выходит ли меню за нижний край
+      if (newY + menuRect.height > window.innerHeight) {
+        newY = window.innerHeight - menuRect.height
+      }
+      // Проверяем, выходит ли меню за левый край
+      if (newX < 0) newX = 0
+      // Проверяем, выходит ли меню за верхний край
+      if (newY < 0) newY = 0
+
+      setAdjustedPosition({ x: newX, y: newY })
+    }
+  }, [props.menuVisible, props.left, props.top])
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        props.setMenuVisible(false)
+        if (props.clickedElementRef.current) {
+          props.clickedElementRef.current.blur()
+        }
+      }
+    }
+
+    if (props.menuVisible) {
+      document.addEventListener("mousedown", handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [props.menuVisible])
+  return (
+    <div
+      className={classNames.container}
+      style={{
+        top: adjustedPosition.y,
+        left: adjustedPosition.x,
+        position: props.position ? props.position : "absolute",
+      }}
+      ref={menuRef}
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/*<ul>*/}
+      {props.children}
+      {/*</ul>*/}
+    </div>
+  )
+}

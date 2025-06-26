@@ -1,0 +1,31 @@
+.container {
+  //position: absolute;
+  background: var(--sideMenu);
+  width: max-content;
+  border-radius: 10px;
+  z-index: 1;
+  border: 1px solid #ffffff;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 0;
+
+  div {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:first-child {
+      border-radius: 10px 10px 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 10px 10px;
+    }
+
+    &:hover {
+      background: var(--search);
+    }
+  }
+}
