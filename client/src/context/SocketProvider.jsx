@@ -17,9 +17,13 @@ export const SocketProvider = ({ children }) => {
         if (!token) return null
 
         const newSocket = io(process.env.REACT_APP_SOCKET_URL, {
+          path: "/socket.io",
           withCredentials: true,
           reconnection: true,
           query: { token },
+          // extraHeaders: {
+          //   Authorization: `Bearer ${token}`
+          // }
         })
 
         newSocket.on("connect", () => {

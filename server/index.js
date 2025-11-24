@@ -37,11 +37,11 @@ app.use(
   }),
 )
 // app.use(upload.single('imageUrl'))
-app.use("/uploads", express.static("uploads"))
-app.use("/auth", authRouter)
-app.use("/user", userRouter)
-app.use("/chatroom", chatroomRouter)
-app.use("/message", messageRouter)
+app.use("/api/uploads", express.static("uploads"))
+app.use("/api/auth", authRouter)
+app.use("/api/user", userRouter)
+app.use("/api/chatroom", chatroomRouter)
+app.use("/api/message", messageRouter)
 app.use(errorMiddleware)
 
 //Server start function

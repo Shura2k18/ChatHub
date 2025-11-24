@@ -27,6 +27,7 @@ export const useSocketChatEvents = () => {
   const chatrooms = useSelector((state) => state.chatrooms.data)
   const connectedRoomsRef = useRef(new Set())
 
+  // === 1. Регистрируем обработчики событий чата ===
   useEffect(() => {
     if (!socket || !isConnected || !me?._id) return
 
@@ -64,34 +65,26 @@ export const useSocketChatEvents = () => {
           }),
         )
       },
-      // deleteMessage: ({ chatroomId, messageId, messageType }) => {
-      //   dispatch(deleteMessage({ chatroomId, messageId, messageType }))
-      // },
-      // editMessage: ({ messageId, content }) => {
-      //   dispatch(editMessage({ messageId, content }))
-      // },
-      // messagesRead: ({ chatroomId, userId, unreadCounts }) => {
-      //   if (userId === me._id) {
-      //     const unread = unreadCounts.find((u) => u.user === me._id)
-      //     dispatch(updateUnreadCounts({ chatroomId, unreadCounts: unread }))
-      //   }
-      //   dispatch(markMessagesAsRead({ chatroomId, userId }))
-      // },
-      // updateTypingStatus: ({ chatroomId, isTyping, userId }) => {
-      //   dispatch(updateTypingStatus({ chatroomId, isTyping, userId }))
-      // },
+      deleteMessage: ({ chatroomId, messageId, messageType }) => {
+        dispatch(deleteMessage({ chatroomId, messageId, messageType }))
+      },
+      editMessage: ({ messageId, content }) => {
+        dispatch(editMessage({ messageId, content }))
+      },
+      messagesRead: ({ chatroomId, userId, unreadCounts }) => {
+        if (userId === me._id) {
+          const unread = unreadCounts.find((u) => u.user === me._id)
+          dispatch(updateUnreadCounts({ chatroomId, unreadCounts: unread }))
+        }
+        dispatch(markMessagesAsRead({ chatroomId, userId }))
+      },
+      updateTypingStatus: ({ chatroomId, isTyping, userId }) => {
+        dispatch(updateTypingStatus({ chatroomId, isTyping, userId }))
+      }
     }
 
     Object.entries(handlers).forEach(([event, handler]) => {
       socket.on(event, handler)
-    })
-
-    // Подключаемся к новым чатам
-    chatrooms.forEach((room) => {
-      if (!connectedRoomsRef.current.has(room._id)) {
-        socket.emit("connectToChatroom", room._id)
-        connectedRoomsRef.current.add(room._id)
-      }
     })
 
     return () => {
@@ -100,4 +93,15 @@ export const useSocketChatEvents = () => {
       })
     }
   }, [socket, isConnected, me?._id, dispatch])
+
+  useEffect(() => {
+    if (!socket || !isConnected || !me?._id) return
+
+    chatrooms.forEach((room) => {
+      if (!connectedRoomsRef.current.has(room._id)) {
+        socket.emit("connectToChatroom", room._id)
+        connectedRoomsRef.current.add(room._id)
+      }
+    })
+  }, [socket, isConnected, me?._id, chatrooms])
 }

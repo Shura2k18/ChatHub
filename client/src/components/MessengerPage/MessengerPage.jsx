@@ -18,6 +18,8 @@ import { useOnlineStatus } from "../../Hooks/useOnlineStatus"
 import { useSocketUserEvents } from "../../Hooks/useSocketUserEvents"
 import { useSocketChatEvents } from "../../Hooks/useSocketChatEvents"
 import { useSocket } from "../../Hooks/useSocket"
+import { motion, AnimatePresence } from "framer-motion";
+
 
 const MessengerPage = () => {
   const MIN_LOADING_TIME = 1000
@@ -45,6 +47,22 @@ const MessengerPage = () => {
   )
   const hasFetchedMessages = useRef(false)
   const { initSocket } = useSocket()
+
+
+  const slideRight = {
+    initial: { x: "-100vw" },
+    animate: { x: 0 },
+    exit: { x: "-100vw" },
+    transition: { duration: 0.3 }
+  };
+
+  const slideLeft = {
+    initial: { x: "100vw" },
+    animate: { x: 0 },
+    exit: { x: "100vw" },
+    transition: { duration: 0.3 }
+  };
+
 
   useEffect(() => {
     initSocket.connect()
@@ -114,35 +132,73 @@ const MessengerPage = () => {
         />
       </CSSTransition>
 
-      {/*ChatsMenu*/}
-      <CSSTransition
-        in={!resize.isScreenMd || !isChatAreaActive}
-        unmountOnExit
-        timeout={300}
-        classNames="slide-right"
-      >
-        <ChatsMenu
-          setIsSideMenuActive={setIsSideMenuActive}
-          setIsChatAreaActive={setIsChatAreaActive}
-          activeChatsMenuScreen={activeChatsMenuScreen}
-          setActiveChatsMenuScreen={setActiveChatsMenuScreen}
-        />
-      </CSSTransition>
+      {/*/!*ChatsMenu*!/*/}
+      {/*<CSSTransition*/}
+      {/*  in={!resize.isScreenMd || !isChatAreaActive}*/}
+      {/*  unmountOnExit*/}
+      {/*  timeout={300}*/}
+      {/*  classNames="slide-right"*/}
+      {/*>*/}
+      {/*  <ChatsMenu*/}
+      {/*    setIsSideMenuActive={setIsSideMenuActive}*/}
+      {/*    setIsChatAreaActive={setIsChatAreaActive}*/}
+      {/*    activeChatsMenuScreen={activeChatsMenuScreen}*/}
+      {/*    setActiveChatsMenuScreen={setActiveChatsMenuScreen}*/}
+      {/*  />*/}
+      {/*</CSSTransition>*/}
 
-      {/*ChatArea*/}
-      <CSSTransition
-        in={!resize.isScreenMd || isChatAreaActive}
-        unmountOnExit
-        timeout={300}
-        classNames="slide-left"
-      >
-        <ChatArea
-          setIsChatAreaActive={setIsChatAreaActive}
-          uploadProgress={uploadProgress}
-          setUploadProgress={setUploadProgress}
-          abortControllers={abortControllers}
-        />
-      </CSSTransition>
+      {/*/!*ChatArea*!/*/}
+      {/*<CSSTransition*/}
+      {/*  in={!resize.isScreenMd || isChatAreaActive}*/}
+      {/*  unmountOnExit*/}
+      {/*  timeout={300}*/}
+      {/*  classNames="slide-left"*/}
+      {/*>*/}
+      {/*  <ChatArea*/}
+      {/*    setIsChatAreaActive={setIsChatAreaActive}*/}
+      {/*    uploadProgress={uploadProgress}*/}
+      {/*    setUploadProgress={setUploadProgress}*/}
+      {/*    abortControllers={abortControllers}*/}
+      {/*  />*/}
+      {/*</CSSTransition>*/}
+
+      <AnimatePresence mode="sync">
+        {(!resize.isScreenMd || !isChatAreaActive) && (
+          <motion.div
+            key="chatsMenu"
+            initial={{ x: "-100vw" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100vw" }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-0 left-0 w-full h-full"
+          >
+            <ChatsMenu
+              setIsSideMenuActive={setIsSideMenuActive}
+              setIsChatAreaActive={setIsChatAreaActive}
+              activeChatsMenuScreen={activeChatsMenuScreen}
+              setActiveChatsMenuScreen={setActiveChatsMenuScreen}
+            />
+          </motion.div>
+        )}
+
+        {(!resize.isScreenMd || isChatAreaActive) && (
+          <motion.div
+            key="chatArea"
+            initial={{ x: "100vw" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100vw" }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-0 left-0 w-full h-full"
+          >
+            <ChatArea
+              setIsChatAreaActive={setIsChatAreaActive}
+              uploadProgress={uploadProgress}
+              setUploadProgress={setUploadProgress}
+              abortControllers={abortControllers}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/*SettingsMenu*/}
       <CSSTransition

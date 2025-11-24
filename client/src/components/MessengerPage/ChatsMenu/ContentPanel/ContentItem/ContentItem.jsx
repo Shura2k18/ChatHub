@@ -244,10 +244,14 @@ export const ContentItem = (props) => {
             {lastMessage ? (
               <div className={"right"}>
                 <p>
-                  {new Date(lastMessage.createdAt).toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
+                  {new Date(lastMessage.createdAt).getTime() === new Date().getTime() ?
+                    new Date(lastMessage.createdAt).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    }) : new Date(lastMessage.createdAt).toLocaleDateString([], {
+                          day: "2-digit",
+                          month: "2-digit",
+                          year: "numeric",})}
                 </p>
                 {lastMessage.user._id === meId && (
                   <div className={"svg"}>
@@ -263,10 +267,14 @@ export const ContentItem = (props) => {
             ) : (
               <div className={"right"}>
                 <p>
-                  {new Date(props.data.createdAt).toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
+                  {new Date(props.data.createdAt) === new Date() ?
+                    new Date(props.data.createdAt).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    }) : new Date(props.data.createdAt).toLocaleDateString([], {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",})}
                 </p>
                 {props.data.unreadCount > 0 && (
                   <div>{props.data.unreadCount}</div>

@@ -21,3 +21,10 @@
   background: var(--chatArea);
   height: var(--viewport-height);
 }
+@media screen and (max-width: 768px) {
+  .chatArea, .unknown {
+    width: 100vw;
+    height: var(--viewport-height);
+    //transition: 0.3s;
+  }
+}

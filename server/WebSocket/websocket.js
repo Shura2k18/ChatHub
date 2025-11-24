@@ -59,6 +59,7 @@ export let sessions
 export let io
 const startSocket = (server) => {
   io = new Server(server, {
+    path: "/socket.io",
     cors: {
       origin: true,
       methods: ["GET", "POST"],
@@ -66,10 +67,12 @@ const startSocket = (server) => {
     },
     transports: ["websocket", "polling"],
   })
+  // io = io.of("/ws")
   // io.set("transports", ["websocket", "polling"])
   // io.set("origins", "*:*")
   io.use(async (socket, next) => {
     try {
+      // const accessToken = socket.handshake.auth.token.split(" ")[1]
       const accessToken = socket.handshake.query.token
       const userData = tokenService.validateAccessToken(accessToken)
       socket.user = userData

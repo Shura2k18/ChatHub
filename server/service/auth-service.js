@@ -50,6 +50,8 @@ class AuthService {
 
   async login(email, password) {
     const user = await UserModel.findOne({ email })
+    console.log(user)
+    console.log(email)
     if (!user) {
       throw ApiError.BadRequest("User with this email was not found")
     }

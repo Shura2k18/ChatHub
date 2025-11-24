@@ -40,7 +40,7 @@ const ChatsMenu = (props) => {
       : 0
     if (!isResizing.current) return
     const newWidth = Math.round(
-      Math.max(350, Math.min(e.clientX - 80, window.innerWidth / 2 - 80)),
+      Math.max(400, Math.min(e.clientX - 130, window.innerWidth / 2 - 80)),
     )
     container.style.gridTemplateColumns = `80px ${newWidth}px calc(100vw - ${newWidth}px - 80px)`
     messRef.current.forEach((el) => {

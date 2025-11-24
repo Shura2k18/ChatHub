@@ -102,7 +102,7 @@ export const TopMenu = (props) => {
   return (
     <>
       <div className={"topMenu"}>
-        <div className="left" onClick={() => setIsInfoMenuActive(true)}>
+        <div className="left">
           {isScreenMd && (
             <div
               className={"svg"}
@@ -114,35 +114,38 @@ export const TopMenu = (props) => {
               <Back />
             </div>
           )}
-          <img
-            src={
-              chatroom.type !== "private"
-                ? `${process.env.REACT_APP_SERVER_URL}${chatroom.imageUrl}`
-                : `${process.env.REACT_APP_SERVER_URL}${privateChatMember.user.imageUrl}`
-            }
-          />
-          <div>
-            <h3>
-              {chatroom.type !== "private"
-                ? chatroom.name
-                : privateChatMember.user.name}
-            </h3>
-            {chatroom.type !== "private" ? (
-              <p>
-                {
-                  members.filter((member) => member.chatroomId === chatroom._id)
-                    .length
-                }{" "}
-                учасників
-              </p>
-            ) : privateChatMember.isTyping ? (
-              <Typing />
-            ) : onlineStatus.status === "online" ? (
-              <p>{t("messenger.chatArea.online")}</p>
-            ) : (
-              <p>{t("messenger.chatArea.offline")}</p>
-            )}
+          <div className="infoBlock" onClick={() => setIsInfoMenuActive(true)}>
+            <img
+              src={
+                chatroom.type !== "private"
+                  ? `${process.env.REACT_APP_SERVER_URL}${chatroom.imageUrl}`
+                  : `${process.env.REACT_APP_SERVER_URL}${privateChatMember.user.imageUrl}`
+              }
+            />
+            <div>
+              <h3>
+                {chatroom.type !== "private"
+                  ? chatroom.name
+                  : privateChatMember.user.name}
+              </h3>
+              {chatroom.type !== "private" ? (
+                <p>
+                  {
+                    members.filter((member) => member.chatroomId === chatroom._id)
+                      .length
+                  }{" "}
+                  учасників
+                </p>
+              ) : privateChatMember.isTyping ? (
+                <Typing />
+              ) : onlineStatus.status === "online" ? (
+                <p>{t("messenger.chatArea.online")}</p>
+              ) : (
+                <p>{t("messenger.chatArea.offline")}</p>
+              )}
+            </div>
           </div>
+
         </div>
         <div className="right">
           {chatroom.type === "private" && (
